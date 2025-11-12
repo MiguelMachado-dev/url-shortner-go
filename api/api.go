@@ -101,7 +101,7 @@ func handleGet(db map[string]string) http.HandlerFunc {
 
 		data, ok := db[code]
 		if !ok {
-			http.Error(w, "url nao encontrada", http.StatusNotFound)
+			http.Error(w, "url not found", http.StatusNotFound)
 		}
 
 		http.Redirect(w, r, data, http.StatusPermanentRedirect)
